@@ -520,7 +520,7 @@ export default function Medical3Page() {
               <button onClick={() => { setShowHistory(true); fetchHistory(user.id); }} className="flex items-center gap-2 px-5 py-2 bg-white/5 hover:bg-white/10 text-slate-300 rounded-lg border border-slate-700 text-xs font-bold">
                 <Clock size={14} /> Lịch sử
               </button>
-              {isProcessing && <span className="flex items-center gap-2 text-xs font-bold text-orange-500 animate-pulse bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">⚡ {provider === 'openai' ? 'ĐANG KẾT NỐI GPT-4.1 MINI' : 'ĐANG KẾT NỐI GEMINI FLASH'}</span>}
+              {isProcessing && <span className="flex items-center gap-2 text-xs font-bold text-orange-500 animate-pulse bg-orange-500/10 px-3 py-1 rounded-full border border-orange-500/20">⚡ {provider === 'openai' ? 'ĐANG KẾT NỐI GPT-4.1 MINI' : 'ĐANG KẾT NỐI GEMINI 2.5 FLASH LITE'}</span>}
             </div>
           </div>
         </div>
@@ -609,7 +609,7 @@ export default function Medical3Page() {
                   disabled={isProcessing}
                   className={`h-10 rounded-lg border text-sm font-semibold transition-all ${provider === 'gemini' ? 'bg-blue-600 text-white border-blue-500' : 'bg-slate-900 text-slate-300 border-slate-700 hover:border-slate-500'}`}
                 >
-                  Gemini Flash
+                  Gemini 2.5 Flash Lite
                 </button>
                 <button
                   onClick={() => setProvider('openai')}
@@ -803,7 +803,7 @@ export default function Medical3Page() {
                     className="w-full p-5 bg-white/[0.02] border border-white/5 rounded-2xl hover:bg-white/5 transition-all text-left"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[10px] uppercase tracking-widest font-black text-orange-400">Medical 3.0 • {h.provider === 'openai' ? 'GPT-4.1 mini' : 'Gemini Flash'}</span>
+                      <span className="text-[10px] uppercase tracking-widest font-black text-orange-400">Medical 3.0 • {h.provider === 'openai' ? 'GPT-4.1 mini' : 'Gemini 2.5 Flash Lite'}</span>
                       <span className="text-[10px] text-slate-500">{new Date(h.created_at).toLocaleString()}</span>
                     </div>
                     <p className="text-xs text-slate-400 italic line-clamp-2">"{String(h.input_transcript || '').slice(0, 140)}..."</p>

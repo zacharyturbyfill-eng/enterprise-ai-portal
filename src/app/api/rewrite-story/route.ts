@@ -78,13 +78,13 @@ const rewriteWithGemini = async (apiKey: string, prompt: string) => {
   const ai = new GoogleGenAI({ apiKey: apiKey.trim() });
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-2.5-flash-lite",
       contents: prompt,
     });
     return String(response.text || "").trim();
   } catch {
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash",
       contents: prompt,
     });
     return String(response.text || "").trim();

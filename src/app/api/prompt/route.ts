@@ -242,7 +242,7 @@ ${JSON.stringify(pkg)}`;
 
     const ai = new GoogleGenAI({ apiKey });
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.5-flash-lite',
       contents: [{ parts: [{ text: correctionPrompt }] }],
       config: { responseMimeType: 'application/json' },
     });
@@ -264,7 +264,7 @@ ${JSON.stringify(pkg)}`;
 
   const ai = new GoogleGenAI({ apiKey });
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-flash-lite',
     contents: [{ parts: [{ text: prompt }] }],
     config: {
       responseMimeType: 'application/json',
@@ -382,7 +382,7 @@ Genre: ${genre} | Style: ${style} | Nationality: ${nationality}`;
     } else {
       const ai = new GoogleGenAI({ apiKey: finalKey });
       const model = ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-2.5-flash-lite",
         contents: [{ parts: [{ text: `Segments: ${JSON.stringify(segments)}. Generate prompts. Return JSON { "results": [{ "segmentIndex": number, "prompt": "string" }] }` }] }],
         config: {
           systemInstruction: systemInstruction,

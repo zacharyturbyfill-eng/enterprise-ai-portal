@@ -144,7 +144,7 @@ const cleanWithGemini = async (apiKey: string, text: string): Promise<string> =>
 
   for (let i = 0; i < chunks.length; i++) {
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-2.5-flash-lite",
       contents: buildCleanPrompt(chunks[i], i, chunks.length),
     });
     outputs.push((response.text || '').trim());

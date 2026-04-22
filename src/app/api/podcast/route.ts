@@ -110,7 +110,7 @@ async function generateWithGemini(
 ): Promise<DialogueLine[]> {
   const ai = new GoogleGenAI({ apiKey: key.trim() });
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-flash-lite',
     contents: prompt,
     config: {
       systemInstruction,
@@ -346,7 +346,7 @@ Hãy viết lại bản hội thoại đầy đủ ý hơn:
       history: historyRow,
       results: finalLines,
       provider,
-      model: provider === 'openai' ? 'gpt-4.1-mini' : 'gemini-2.5-flash',
+      model: provider === 'openai' ? 'gpt-4.1-mini' : 'gemini-2.5-flash-lite',
       title,
     });
   } catch (error: any) {

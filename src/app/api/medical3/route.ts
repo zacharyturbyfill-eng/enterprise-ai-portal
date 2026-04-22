@@ -185,7 +185,7 @@ ${transcript.slice(0, 120000)}`;
 
   const ai = new GoogleGenAI({ apiKey: apiKey.trim() });
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-flash-lite',
     contents: [{ parts: [{ text: prompt }] }],
     config: {
       responseMimeType: 'application/json',
@@ -240,7 +240,7 @@ ${JSON.stringify(source)}`;
 
   const ai = new GoogleGenAI({ apiKey: apiKey.trim() });
   const response = await ai.models.generateContent({
-    model: 'gemini-2.5-flash',
+    model: 'gemini-2.5-flash-lite',
     contents: [{ parts: [{ text: prompt }] }],
     config: {
       responseMimeType: 'application/json',
@@ -346,7 +346,7 @@ async function generatePromptsBatch(
   try {
     if (provider === 'gemini') {
       const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
+        model: 'gemini-2.5-flash-lite',
         contents: [{ parts: [{ text: userPrompt }] }],
         config: {
           systemInstruction: getSystemInstruction(settings),
